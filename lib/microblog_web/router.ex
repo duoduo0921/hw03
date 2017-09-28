@@ -19,6 +19,8 @@ defmodule MicroblogWeb.Router do
     get "/", PageController, :index
 
     resources "/messages", MessageController
+
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
