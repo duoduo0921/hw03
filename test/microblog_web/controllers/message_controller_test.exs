@@ -1,14 +1,14 @@
 defmodule MicroblogWeb.MessageControllerTest do
   use MicroblogWeb.ConnCase
 
-  alias Microblog.Micro
+  alias Microblog.Accounts
 
-  @create_attrs %{name: "some name"}
-  @update_attrs %{name: "some updated name"}
-  @invalid_attrs %{name: nil}
+  @create_attrs %{content: "some content"}
+  @update_attrs %{content: "some updated content"}
+  @invalid_attrs %{content: nil}
 
   def fixture(:message) do
-    {:ok, message} = Micro.create_message(@create_attrs)
+    {:ok, message} = Accounts.create_message(@create_attrs)
     message
   end
 
@@ -60,7 +60,7 @@ defmodule MicroblogWeb.MessageControllerTest do
       assert redirected_to(conn) == message_path(conn, :show, message)
 
       conn = get conn, message_path(conn, :show, message)
-      assert html_response(conn, 200) =~ "some updated name"
+      assert html_response(conn, 200) =~ "some updated content"
     end
 
     test "renders errors when data is invalid", %{conn: conn, message: message} do

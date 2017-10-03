@@ -3,8 +3,8 @@
 <ul>
 
   <li>
-    <strong>Name:</strong>
-    <%= @message.name %>
+    <strong>Content:</strong>
+    <%= @message.content %>
   </li>
 
 </ul>

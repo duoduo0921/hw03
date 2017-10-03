@@ -3,7 +3,7 @@ defmodule Microblog.Repo.Migrations.CreateMessages do
 
   def change do
     create table(:messages) do
-      add :name, :string
+      add :content, :string
 
       timestamps()
     end

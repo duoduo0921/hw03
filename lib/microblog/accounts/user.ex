@@ -6,8 +6,6 @@ defmodule Microblog.Accounts.User do
 
   schema "users" do
     field :email, :string
-    field :name, :string
-    field :password, :string
 
     timestamps()
   end
@@ -15,7 +13,7 @@ defmodule Microblog.Accounts.User do
   @doc false
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:name, :email, :password])
-    |> validate_required([:name, :email, :password])
+    |> cast(attrs, [:email])
+    |> validate_required([:email])
   end
 end

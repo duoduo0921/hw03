@@ -1,11 +1,11 @@
-defmodule Microblog.Micro.Message do
+defmodule Microblog.Accounts.Message do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Microblog.Micro.Message
+  alias Microblog.Accounts.Message
 
 
   schema "messages" do
-    field :name, :string
+    field :content, :string
 
     timestamps()
   end
@@ -13,7 +13,7 @@ defmodule Microblog.Micro.Message do
   @doc false
   def changeset(%Message{} = message, attrs) do
     message
-    |> cast(attrs, [:name])
-    |> validate_required([:name])
+    |> cast(attrs, [:content])
+    |> validate_required([:content])
   end
 end
