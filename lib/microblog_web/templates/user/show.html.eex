@@ -9,5 +9,8 @@
 
 </ul>
 
-<span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
+    <div class="form-group">
+      <%= submit "Follow", class: "btn btn-primary" %>
+    </div>
+
 <span><%= link "Back", to: user_path(@conn, :index) %></span>

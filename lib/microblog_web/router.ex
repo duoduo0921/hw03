@@ -23,6 +23,8 @@ defmodule MicroblogWeb.Router do
     resources "/messages", MessageController
 
     resources "/users", UserController
+    
+    resources "/follows", FollowController, except: [:get, :show, :index]
 
    post "/sessions", SessionController, :login
 
@@ -31,6 +33,6 @@ defmodule MicroblogWeb.Router do
 
   # Other scopes may use custom stacks.
   # scope "/api", MicroblogWeb do
-  #   pipe_through :api
+  # pipe_through :api
   # end
 end

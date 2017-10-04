@@ -5,9 +5,9 @@ defmodule MicroblogWeb.MessageController do
   alias Microblog.Accounts.Message
 
   def index(conn, _params) do
-    messages = Accounts.list_messages()
-    render(conn, "index.html", messages: messages)
-  end
+   messages = Accounts.list_messages()
+   render(conn, "index.html", messages: messages)
+end
 
   def new(conn, _params) do
     changeset = Accounts.change_message(%Message{})
@@ -26,7 +26,7 @@ defmodule MicroblogWeb.MessageController do
   end
 
   def show(conn, %{"id" => id}) do
-    message = Accounts.get_message!(id)
+    message = Accounts.get_message!(id) |> Microblog.Repo.preload([:user])
     render(conn, "show.html", message: message)
   end
 
