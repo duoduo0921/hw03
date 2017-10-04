@@ -14,6 +14,6 @@ defmodule Microblog.Accounts.Message do
   def changeset(%Message{} = message, attrs) do
     message
     |> cast(attrs, [:user_id, :content])
-    |> validate_required([:content])
+    |> validate_required([:user_id, :content])
   end
 end

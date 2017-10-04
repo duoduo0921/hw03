@@ -17,6 +17,7 @@ end
   def create(conn, %{"message" => message_params}) do
     case Accounts.create_message(message_params) do
       {:ok, message} ->
+        message = Microblog.Repo.preload(message, :user)
         conn
         |> put_flash(:info, "Message created successfully.")
         |> redirect(to: message_path(conn, :show, message))
