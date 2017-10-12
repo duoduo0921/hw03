@@ -26,6 +26,8 @@ defmodule MicroblogWeb.Router do
     
     resources "/follows", FollowController, except: [:get, :show, :index]
 
+   resources "/likes", LikeController, except: [:new, :edit]    
+    
    post "/sessions", SessionController, :login
 
    delete "/sessions", SessionController, :logout

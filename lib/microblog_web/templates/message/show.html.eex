@@ -2,10 +2,17 @@
 
 <ul>
 
-  <li>
     <strong>Content:</strong>
     <%= @message.content %>
-  </li>
+ <br/>
+    <%= if @message.user do %>
+<span>
+sent by <%= link @message.user.email, to: user_path(@conn, :show, @message.user) %>
+</span>
+<% else %> <span> sent by default</span> <% end %>
+</td>
+</td>
+ 
 
 </ul>
 

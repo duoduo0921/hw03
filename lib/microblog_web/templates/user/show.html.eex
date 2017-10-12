@@ -1,16 +1,6 @@
 <h2>Show User</h2>
 
-<ul>
-
-  <li>
-    <strong>Email:</strong>
-    <%= @user.email %>
-  </li>
-
-</ul>
-
-    <div class="form-group">
-      <%= submit "Follow", class: "btn btn-primary" %>
-    </div>
-
+    <%= render MicroblogWeb.UserView, "user.html", assigns %>
+    </br>
+    
 <span><%= link "Back", to: user_path(@conn, :index) %></span>

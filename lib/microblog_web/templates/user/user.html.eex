@@ -1,0 +1,9 @@
+<ul>
+<strong>Email:</strong>
+    <%= @user.email %>
+</ul>
+
+<div class="form-group">
+    <%= submit "Follow", class: "btn btn-primary" %>
+  </div>
+

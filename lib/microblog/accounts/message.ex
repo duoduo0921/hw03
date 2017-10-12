@@ -1,6 +1,7 @@
 defmodule Microblog.Accounts.Message do
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query
   alias Microblog.Accounts.Message
 
 
@@ -17,3 +18,4 @@ defmodule Microblog.Accounts.Message do
     |> validate_required([:user_id, :content])
   end
 end
+
