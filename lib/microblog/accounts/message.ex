@@ -1,13 +1,15 @@
 defmodule Microblog.Accounts.Message do
   use Ecto.Schema
   import Ecto.Changeset
-  import Ecto.Query
   alias Microblog.Accounts.Message
+  alias Microblog.Accounts.Like
 
 
   schema "messages" do
     field :content, :string
     belongs_to :user, Microblog.Accounts.User
+    has_many :likes, Like, on_delete: :delete_all
+
     timestamps()
   end
 

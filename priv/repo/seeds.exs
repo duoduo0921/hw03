@@ -17,10 +17,3 @@ Repo.delete_all(User)
 
 Repo.insert!(%User{email: "karry@163.com"})
 Repo.insert!(%User{email: "kelly@163.com"})
-
-alias Microblog.Accounts.Message
-Repo.delete_all(Message)
-
-Repo.insert!(%Message{content: "yo!"})
-Repo.insert!(%Message{content: "hi!!"})
-

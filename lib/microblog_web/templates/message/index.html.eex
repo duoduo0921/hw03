@@ -1,68 +1,25 @@
 <div>
 <h2>All Messages</h2>
-<%= if @current_user do %>
-  <span><%= link "New Message", to: message_path(@conn, :new), class: "btn btn-outline-info" %></span>
-<% end %>
 
 <table class="table">
   <thead>
     <tr>
-      <th></th>
+      <th>Content</th>
+      <th>User</th>
     </tr>
-  </thead>
-  <tbody>
-
+</thead>
+    <tbody id="messages">
 <%= for message <- @messages do %>
     <tr>
-      <td><%= message.content %>
-
- <%= if message.user do %>
- <br/>
-<span>
+      <td><%= message.content %></td>
+ <td>
 <%= link message.user.email, to: user_path(@conn, :show, message.user) %>
-</span>
-<% else %> <span><br/>sent by default</span> <% end %>
 </td>
-</td>
-
+     
       <td class="text-right">
         <span><%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %></span>
-        <span>
-<%= if @current_user == message.user do %>
-<%= link "Delete", to: message_path(@conn, :delete, message), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %> 
-<% end %>
-</span>
       </td>
     </tr>
 <% end %>
-  </tbody>
+</tbody>
 </table>
-</div>
-
-</br> </br>
-
-<div>
-<h2>My Messages</h2>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
- <%= for message <- @messages do %>
-   <%= if @current_user == message.user do %>
-      <td><%= message.content %>
-<td class="text-right">
-        <span><%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %></span>
-        <span>
-<%= link "Delete", to: message_path(@conn, :delete, message), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %> 
-<% end %>
-</span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-</div>

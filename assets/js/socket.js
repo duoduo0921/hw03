@@ -54,7 +54,44 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 socket.connect()
 
 // Now that you are connected, you can join channels with a topic:
-let channel = socket.channel("topic:subtopic", {})
+let channel = socket.channel("updates:all", {})
+
+const newMessage = function({message_content, message_user, user_show, message_show}) {
+  let m = document.createElement("tr")
+  
+  let m_content = document.createElement("td")
+  m_content.innerText = message_content
+  
+  let m_user = document.createElement("td")
+  let m_user_show = document.createElement("a")
+  m_user_show.href = user_show
+  m_user_show.innerText = message_user
+  m_user.apprendChild(m_user_show)
+
+  
+  let m_show = document.createElement("td")
+  m_show.className = "text-right"
+  let m_show_span = document.createElement("span")
+  let m_show_link = document.createElement("a")
+  m_show_link.href = message_show
+  m_show_link.className = "btn btn-default btn-xs"
+  m_show_link.innerText = "Show"
+  m_show_span.appendChild(m_show_link)
+  m_show.appendChild(m_show_span)
+
+
+  m.appendChild(m_content)
+  m.appendChild(m_user)
+  m.appendChild(m_show)
+
+  return m
+}
+
+ channel.on("new_m", payload => {
+ let newM = newMessage(payload)
+ $("#messages").prepend(newM)
+})
+
 channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })

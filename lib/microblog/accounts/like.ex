@@ -5,8 +5,8 @@ defmodule Microblog.Accounts.Like do
 
 
   schema "likes" do
-    belongs_to :message, Microblog.Accounts.Message
     belongs_to :user, Microblog.Accounts.User
+    belongs_to :message, Microblog.Accounts.Message
 
     timestamps()
   end
@@ -14,7 +14,7 @@ defmodule Microblog.Accounts.Like do
   @doc false
   def changeset(%Like{} = like, attrs) do
     like
-    |> cast(attrs, [:user_id, :message_id])
+    |> cast(attrs, [:user_id, :message_id]) 
     |> validate_required([:user_id, :message_id])
   end
 end

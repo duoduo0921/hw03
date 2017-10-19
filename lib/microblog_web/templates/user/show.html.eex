@@ -1,6 +1,9 @@
+
 <h2>Show User</h2>
 
-    <%= render MicroblogWeb.UserView, "user.html", assigns %>
-    </br>
+  <strong>Email:</strong> <%= @user.email %>     
+
+
+</br></br>
     
 <span><%= link "Back", to: user_path(@conn, :index) %></span>

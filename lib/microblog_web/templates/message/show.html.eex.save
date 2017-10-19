@@ -13,18 +13,17 @@ sent by <%= link @message.user.email, to: user_path(@conn, :show, @message.user)
 </td>
 </td>
 
+<%= if @current_user do %>
          <%= if Microblog.Accounts.get_like_by_id(@current_user, @message) do %>
-           <button class="btn btn-warning">Liked</button>
+           <button class="btn btn-outline-info">Unlike</button>
            <% else %>
            <button class="btn btn-primary" id="like-btn" data-user_id="<%= @current_user.id %>">Like</button>
        <% end %>
+<% end %>
 
 </ul>
 
 <span><%= link "Back", to: message_path(@conn, :index) %></span>
-<%= if @current_user == @message.user do %>
-<%= link "Delete", to: message_path(@conn, :delete, @message), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %> 
-<% end %>
 
 <div id="message-likes"
      data-path="<%= like_path(@conn, :index) %>"
@@ -35,11 +34,11 @@ sent by <%= link @message.user.email, to: user_path(@conn, :show, @message.user)
 
 <script id="likes-template" type="text/x-handlebars-template">
   <div class="text-center">
-    <p>Likes: <%= Microblog.Accounts.like_count(@message) %></p>
+    <p>Likes: <%= @ %></p>
     {{#each data}}
       <p>{{user_email}} liked this message.</p>
     {{else}}
-      <p>No likes yet</p>
+      <p>No likes</p>
     {{/each}}
   </div>
 </script>
