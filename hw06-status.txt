@@ -28,15 +28,12 @@ Yes, but it took me a really long time...
 
 6. Did you successfully implement live updates? If not, what doesn't work?
 
-Not really. I thought it should work since I did all the required steps following the documentation, but it still didn’t have the live updates.
-
+Not really for now. I thought it should work since I did all the required steps following the documentation, but it still didn’t have the live updates.You could check my socket.js, and my message_controller. Everything is already there, but it just did not work.
 
 7. Did Prof. Tuck give you any alternate / additional goals for this assignment?
    If so, what were they and how well did you complete them with your submission?
 
-Yes. My goal is to get likes and live updates working and have better understanding of the phoenix structure. I got likes working and live updates somehow didn’t work. I did have better understanding of the phoenix structure now.
-
+Yes. My goal is to get likes, follows and live updates working and have better understanding of the phoenix structure. I got likes and follows working but live updates somehow didn’t work. I did have better understanding of the phoenix structure now.
 
 8. Is there any other useful information that you want to provide for grading?
 Though my live updates didn’t work, I put a lot of efforts on it. Please understand me and don’t penalize me too much!!!Thank you!!!!
-
