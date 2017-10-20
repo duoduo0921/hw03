@@ -1,0 +1,42 @@
+CS4550 Web Dev, Fall 2017.
+
+HW06 status report form.
+
+Please answer the following questions and submit the filled-in file to Bottlenose.
+
+
+1. What's your name?
+
+Handuo Wang
+
+2. What's the link to your Github repo's releases page?
+
+https://github.com/duoduo0921/hw03/releases
+
+3. What's the link to your deployed Microblog app?
+
+microblog.handlek0921.com
+
+4. What's the link to the Travis CI build for the version of your app
+   that you made a release of? You can find this on Travis under "Build History".
+
+https://travis-ci.org/duoduo0921/hw03/builds/290261043
+
+5. Did you successfully deploy? If not, what doesn't work?
+
+Yes, but it took me a really long time...
+
+6. Did you successfully implement live updates? If not, what doesn't work?
+
+Not really. I thought it should work since I did all the required steps following the documentation, but it still didn’t have the live updates.
+
+
+7. Did Prof. Tuck give you any alternate / additional goals for this assignment?
+   If so, what were they and how well did you complete them with your submission?
+
+Yes. My goal is to get likes and live updates working and have better understanding of the phoenix structure. I got likes working and live updates somehow didn’t work. I did have better understanding of the phoenix structure now.
+
+
+8. Is there any other useful information that you want to provide for grading?
+Though my live updates didn’t work, I put a lot of efforts on it. Please understand me and don’t penalize me too much!!!Thank you!!!!
+
