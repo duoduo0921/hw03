@@ -20,8 +20,8 @@ end
 
 MicroblogWeb.Endpoint.broadcast("updates:all", "new_m",
            %{"message_content" => message.content,
-             "message_user" => Microblog.Accounts.get_user!(message.user_id).email,
-             "user_show" => user_path(conn, :show, Microblog.Accounts.get_user!(message.user_id)),
+"message_user" => Microblog.Accounts.get_user!(message.user_id).email,
+"user_show" => user_path(conn, :show, Microblog.Accounts.get_user!(message.user_id)),
 "message_show" => message_path(conn, :show, message)})
 
         conn

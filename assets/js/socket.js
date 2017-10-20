@@ -56,24 +56,26 @@ socket.connect()
 // Now that you are connected, you can join channels with a topic:
 let channel = socket.channel("updates:all", {})
 
-const newMessage = function({message_content, message_user, user_show, message_show}) {
+const newMessage = function(payload) {
+  
   let m = document.createElement("tr")
   
   let m_content = document.createElement("td")
-  m_content.innerText = message_content
-  
+  m_content.innerText = payload.message_content
+
   let m_user = document.createElement("td")
   let m_user_link = document.createElement("a")
-  m_user_link.href = user_show
-  m_user_link.innerText = message_user
-  m_user.apprendChild(m_user_link)
+  m_user_link.href = payload.user_show
+  m_user_link.innerText = payload.message_user
+  console.log("test")
+  m_user.appendChild(m_user_link)
 
   
   let m_show = document.createElement("td")
   m_show.className = "text-right"
   let m_show_span = document.createElement("span")
   let m_show_link = document.createElement("a")
-  m_show_link.href = message_show
+  m_show_link.href = payload.message_show
   m_show_link.className = "btn btn-default btn-xs"
   m_show_link.innerText = "Show"
   m_show_span.appendChild(m_show_link)

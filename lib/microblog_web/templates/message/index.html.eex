@@ -12,10 +12,9 @@
 <%= for message <- @messages do %>
     <tr>
       <td><%= message.content %></td>
- <td>
+     <td>
 <%= link message.user.email, to: user_path(@conn, :show, message.user) %>
 </td>
-     
       <td class="text-right">
         <span><%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %></span>
       </td>
