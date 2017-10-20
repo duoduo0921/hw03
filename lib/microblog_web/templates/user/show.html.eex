@@ -1,7 +1,24 @@
 
 <h2>Show User</h2>
 
-  <strong>Email:</strong> <%= @user.email %>     
+  <strong>Email:</strong> <%= @user.email %>  
+  </br>
+
+  <%= if @current_user do %>
+<%= if Microblog.Accounts.get_follow_by_users(@current_user, @user) do %>
+
+<span><%= link "Unfollow", to: follow_path(@conn, :delete, Microblog.Accounts.get_follow_by_users(@current_user, @user)), method: :delete, class: "btn btn-danger btn-xs" %></span> 
+
+<% else %>
+<%= form_for @conn, follow_path(@conn, :create), [as: "follow"], fn f -> %>
+                <%= hidden_input f, :follower_id, value: @current_user.id %>
+                <%= hidden_input f, :following_id, value: @user.id %>
+                <div class="form-group">
+                  <%= submit "Follow", class: "btn btn-primary" %>
+                </div>
+              <% end %>
+<% end %>
+<% end %>   
 
 
 </br></br>

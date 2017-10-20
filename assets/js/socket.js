@@ -63,10 +63,10 @@ const newMessage = function({message_content, message_user, user_show, message_s
   m_content.innerText = message_content
   
   let m_user = document.createElement("td")
-  let m_user_show = document.createElement("a")
-  m_user_show.href = user_show
-  m_user_show.innerText = message_user
-  m_user.apprendChild(m_user_show)
+  let m_user_link = document.createElement("a")
+  m_user_link.href = user_show
+  m_user_link.innerText = message_user
+  m_user.apprendChild(m_user_link)
 
   
   let m_show = document.createElement("td")
