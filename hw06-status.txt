@@ -35,6 +35,5 @@ Not really for now. I thought it should work since I did all the required steps 
 
 Yes. My goal is to get likes, follows and live updates working and have better understanding of the phoenix structure. I got likes and follows working but live updates somehow didn’t work. I did have better understanding of the phoenix structure now.
 
-
 8. Is there any other useful information that you want to provide for grading?
 Though my live updates didn’t work, I put a lot of efforts on it. Please understand me and don’t penalize me too much!!!Thank you!!!!
