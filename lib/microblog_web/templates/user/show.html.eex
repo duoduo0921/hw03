@@ -1,8 +1,10 @@
 
 <h2>Show User</h2>
 
+
+
   <strong>Email:</strong> <%= @user.email %>  
-  </br>
+  </br></br>
 
   <%= if @current_user do %>
 <%= if Microblog.Accounts.get_follow_by_users(@current_user, @user) do %>
@@ -10,6 +12,7 @@
 <span><%= link "Unfollow", to: follow_path(@conn, :delete, Microblog.Accounts.get_follow_by_users(@current_user, @user)), method: :delete, class: "btn btn-danger btn-xs" %></span> 
 
 <% else %>
+<%= if @current_user != @user do %>
 <%= form_for @conn, follow_path(@conn, :create), [as: "follow"], fn f -> %>
                 <%= hidden_input f, :follower_id, value: @current_user.id %>
                 <%= hidden_input f, :following_id, value: @user.id %>
@@ -19,8 +22,6 @@
               <% end %>
 <% end %>
 <% end %>   
-
-
-</br></br>
-    
+<% end %>
+</br>    
 <span><%= link "Back", to: user_path(@conn, :index) %></span>

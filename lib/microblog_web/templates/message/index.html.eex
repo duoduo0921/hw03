@@ -8,6 +8,11 @@
       <th>User</th>
     </tr>
 </thead>
+
+<%= if @current_user do %>
+  <span><%= link "New Message", to: message_path(@conn, :new), class: "btn btn-outline-info" %></span>
+<% end %>
+
     <tbody id="messages">
 <%= for message <- @messages do %>
     <tr>

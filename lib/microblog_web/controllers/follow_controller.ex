@@ -55,6 +55,6 @@ defmodule MicroblogWeb.FollowController do
 
     conn
     |> put_flash(:info, "Follow deleted successfully.")
-    |> redirect(to: follow_path(conn, :index))
+    |> redirect(to: user_path(conn, :index))
   end
 end

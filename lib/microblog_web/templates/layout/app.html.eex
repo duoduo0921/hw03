@@ -24,11 +24,7 @@
 <%= link "Users", to: user_path(@conn, :index), class: "navbar-brand"%>
 <% end %>
 
-<%= if @current_user do %>
-  <span><%= link "New Message", to: message_path(@conn, :new), class: "btn btn-outline-info" %></span>
-<% end %>
-      
-
+     
   <ul class="navbar-nav navbar-right"></ul>
 
   <%= if @current_user do %>
