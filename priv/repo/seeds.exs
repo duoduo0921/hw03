@@ -14,4 +14,4 @@ alias Microblog.Repo
 alias Microblog.Accounts.User
 
 
-Repo.insert!(%User{email: "admin@163.com", is_admin?:true})
+Repo.insert!(%User{email: "admin@163.com", is_admin?: true, password: "adminadmin", password_confirmation: "adminadmin"})

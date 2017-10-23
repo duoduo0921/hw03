@@ -22,16 +22,16 @@
 </td>
       <td class="text-right">
         <span><%= link "Show", to: message_path(@conn, :show, message), class: "btn btn-default btn-xs" %></span>
-      </td>
-    </tr>
-<%= if is_admin?(@current_user) do %>
+        <%= if is_admin?(@current_user) do %>     
             <div class="m-2">
             <span><%= link "Edit", to: message_path(@conn, :edit, message),
                   class: "btn btn-outline-info btn-xs" %></span>
             <span><%= link "Delete", to: message_path(@conn, :delete, message), method: :delete,
                   data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-            </div>
+            </div>            
 <% end %>
+      </td>
+    </tr>
 <% end %>
 </tbody>
 </table>

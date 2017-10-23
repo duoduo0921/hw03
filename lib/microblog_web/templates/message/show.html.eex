@@ -25,10 +25,6 @@ sent by <%= link @message.user.email, to: user_path(@conn, :show, @message.user)
 <span><%= link "Back", to: message_path(@conn, :index) %></span>
 <%= if @current_user == @message.user do %>
 <%= link "Delete", to: message_path(@conn, :delete, @message), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-<%= if is_admin?(@current_user) do %>
-  <p><span><%= link "Edit", to: message_path(@conn, :edit, @message) %></span></p>
-<% end %>
-<%= link "Delete", to: message_path(@conn, :delete, @message), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
 <% end %>
 
 <div id="message-likes"
