@@ -12,7 +12,6 @@ defmodule MicroblogWeb.SessionController do
     end
   end
 
-
 def update_tries(throttle, prev) do
     if throttle do
       prev + 1
