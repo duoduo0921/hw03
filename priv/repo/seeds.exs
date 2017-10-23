@@ -13,7 +13,5 @@
 alias Microblog.Repo
 alias Microblog.Accounts.User
 
-Repo.delete_all(User)
 
-Repo.insert!(%User{email: "karry@163.com"})
-Repo.insert!(%User{email: "kelly@163.com"})
+Repo.insert!(%User{email: "admin@163.com", is_admin?:true})
