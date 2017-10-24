@@ -1,0 +1,62 @@
+CS4550 Web Dev, Fall 2017.
+
+HW06 status report form.
+
+Please answer the following questions and submit the filled-in file to Bottlenose.
+
+
+1. What's your name?
+
+Handuo Wang
+
+2. What's the link to your Github repo's releases page?
+
+https://github.com/duoduo0921/hw03/releases
+
+3. What's the link to your deployed Microblog app?
+
+microblog.handlek0921.com
+
+4. Did you successfully deploy? If not, what doesn't work?
+
+Yes.
+
+5. Did you successfully implement passwords securely? If not, what doesn't work?
+
+Yes.
+
+6. Did you successfully implement admin users? What paths are admin-only? What paths
+   are accessible to all users.
+
+Yes. My admin user is admin@163.com and its password is adminadmin.
+The admin could edit and delete all messages, and delete all users.
+Other users could only view messages and users, and delete their own messages.
+
+7. What changes did you make to clean up your application layout and navigation?
+
+Users must sign up and login to get to the feed page from the landing page. If logout, users will go back to the landing page, and need to login again to see messages.
+
+8. Did you complete any catch up tasks? Which ones? Is there anything still not working
+   about those features?
+
+1. Log in / log out.
+2. Likes via AJAX.
+3. Messages show up in realtime via WebSockets.
+4. Working deployment script
+
+9. Did you complete any additional tasks? Which ones? For each, describe how it should
+   work and how that differs from your deployed functionality.
+
+Answered in A.
+
+A. Did you complete any bonus addtional goals for extra credit? For each, describe how
+   it should work and how that differs from your deployed functionality.
+
+1. I used Boostrap / CSS / etc to polish up the look of my site.
+2. Got follows working now.
+3. Added the concept of an "admin" user, who can manage all the resources. (Non-admins cannot edit or delete other users or messages/posts belonging to other users now.)
+
+
+B. Is there any other useful information that you want to provide for grading?
+
+I did all the core goals, four catch-up tasks and three additional tasks. Thank you!
