@@ -16,3 +16,6 @@ you could like on other users' messages but cannot edit or delete them
 the admin account is : admin@163.com and its password is adminadmin
 
 the admin could manage all the resources. 
+
+
+bi1I6W1GG7FjcTdSfS4UCO8H9NlNQC8k
